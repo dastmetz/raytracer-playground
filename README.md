@@ -6,7 +6,6 @@ A Swift playground about a basic raytracer, implementing diffus and metallic ref
 ![](assets/vid1.gif)
 ***
 ![](assets/overview2.gif)
-![](assets/generaloverview.gif)
 
 ***
 
