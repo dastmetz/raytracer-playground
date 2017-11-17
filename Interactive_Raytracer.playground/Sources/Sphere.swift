@@ -59,7 +59,7 @@ class Sphere: RayIntersection {
                 intersection.reflectionType = material
                 return true
             }
-            tmp = (-b + sqrt(d)) / a                                           
+            tmp = (-b + sqrt(d)) / a
             if (tmin < tmp && tmp < tmax){
                 intersection.t = tmp
                 intersection.p = ray.positionAt(intersection.t)

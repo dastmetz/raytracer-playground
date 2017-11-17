@@ -29,11 +29,12 @@ class ColorPickerViewController: UIViewController{
         pickerView!.layoutMargins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
+    @objc
     public func colorSelected( _ recognizer: UITapGestureRecognizer){
         let color = getColorForPoint(point: recognizer.location(in: pickerView))
         delegate?.colorChanged(color: color)
         self.presentingViewController!.dismiss(animated: true, completion: nil)
-
+        
     }
     
     

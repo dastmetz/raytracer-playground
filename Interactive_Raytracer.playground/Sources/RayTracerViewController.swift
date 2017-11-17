@@ -20,7 +20,7 @@ public class RayTracerViewController: UIViewController, UIGestureRecognizerDeleg
     var reflectionSelection = UISegmentedControl()
     var colorSelection = UIView()
     var renderShapes = [RenderShape : ShapeDescriptor]()
-
+    
     static let renderController = RenderController()
     var renderDelegate: RayTracer?
     
@@ -46,6 +46,7 @@ public class RayTracerViewController: UIViewController, UIGestureRecognizerDeleg
         }
     }
     
+    @objc
     public func selectMaterial(_ segment: UISegmentedControl){
         if(segment.selectedSegmentIndex == 0){ // diffus
             renderDelegate?.updateSelectedShapeReflection(newReflection: .Diffus)
@@ -58,6 +59,7 @@ public class RayTracerViewController: UIViewController, UIGestureRecognizerDeleg
         return UIModalPresentationStyle.none
     }
     
+    @objc
     public func colorPickerAction( _ sender: UIButton){
         let colorPicker = ColorPickerViewController()
         colorPicker.modalPresentationStyle = .popover
@@ -83,7 +85,7 @@ public class RayTracerViewController: UIViewController, UIGestureRecognizerDeleg
         
     }
     
-        
+    
     public func setImage(image: CIImage){
         imageView?.image = UIImage(ciImage: image)
     }
@@ -118,7 +120,7 @@ public class RayTracerViewController: UIViewController, UIGestureRecognizerDeleg
                     z: camPosRenderer.z - Float(diffY))
     }
     
-   
+    
     
     func updateRenderShapeSize(shape: RenderShape){
         guard let curr = renderShapes[shape] else { return }
@@ -163,7 +165,7 @@ public class RayTracerViewController: UIViewController, UIGestureRecognizerDeleg
             reflectionSelection.selectedSegmentIndex = 1
             break
         }
-    
+        
     }
     
     

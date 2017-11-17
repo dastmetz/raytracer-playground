@@ -14,13 +14,13 @@ public class RenderController {
     static let sharedInstance = RenderController()
     static var maxRenderObjectSize: Float = 0.5
     var standardGroundColor: Vec3 = Vec3(x: 255/255, y: 51/255, z: 51/255)
-
+    
     
     var antialiasingEnabled = true
     var samplingRate = 10
     var scene = Scene()
     var camera = Camera(aspect: Float(RayTracerViewController.imageViewWidth/RayTracerViewController.imageViewHeight))
-
+    
     
     public func createRenderImage(width: Int, height: Int) -> CIImage{
         let colorSpace = CGColorSpaceCreateDeviceRGB()
@@ -30,7 +30,7 @@ public class RenderController {
         let bitsProComponent = 8
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
         let dataProvider = CGDataProvider(data: NSData(bytes: pixelSet,
-                                                      length: pixelSet.count * MemoryLayout<Pixel>.size))
+                                                       length: pixelSet.count * MemoryLayout<Pixel>.size))
         let tmpImage = CGImage(width: width,
                                height: height,
                                bitsPerComponent: bitsProComponent,
@@ -101,7 +101,7 @@ public class RenderController {
         camera.rotateCamera(lookAt: lookAt)
         
     }
- 
+    
     public func changeFieldOfView(_ fov: Float){
         camera.setFieldOfView(fov)
     }

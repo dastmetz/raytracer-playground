@@ -23,9 +23,10 @@ rayTracer.setShapeColor(color: shapeColor)
 let reflectionProperty = ReflectionDescriptor.Diffus
 rayTracer.setShapeReflection(newReflection: reflectionProperty)
 
-//: Let's switch to fully interactive mode. On the right side you can create a custom scene. Therefor, press on the the grid to add a new shape. You can modify the shape, move it around the surface, switch between different sizes by tapping it or remove it via longpress. Have fun.    
+//: Let's switch to fully interactive mode. On the right side you can create a custom scene. Therefor, press on the the grid to add a new shape. You can modify the shape, move it around the surface, switch between different sizes by tapping it or remove it via longpress. Have fun.
 
 rayTracer.start()
+
 
 
 

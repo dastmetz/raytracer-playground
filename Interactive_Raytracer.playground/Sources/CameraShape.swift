@@ -16,7 +16,7 @@ public class CameraShape: UIView {
     
     var rotationDegree: Float = 0
     //var currentRotationDifference: CGFloat?
-  //  var originalTransformation: CGAffineTransform?
+    //  var originalTransformation: CGAffineTransform?
     
     override public init(frame: CGRect){
         super.init(frame: frame)
@@ -50,36 +50,36 @@ public class CameraShape: UIView {
         bezier2Path.close()
         bezier2Path.lineWidth = 2
         bezier2Path.stroke()
-    
+        
     }
     
     /*
-    func rotateCamera(gesture: UIRotationGestureRecognizer){
-        return
-        
-        let  oldRotationRadians = atan2f(Float(self.originalTransformation!.b), Float(self.originalTransformation!.a))
-        let  currentRotationRad = atan2f(Float(self.transform.b), Float(self.transform.a))
-        let oldRotationDeg = oldRotationRadians * Float(90 / M_PI_2)
-        let currentRotationDeg = currentRotationRad * Float(90 / M_PI_2)
-        let diff = CGFloat(oldRotationDeg - currentRotationDeg)
-        
-        if (0<=abs(diff) && abs(diff)<=90){ // allow only rotation between -90 and 90 degree
-            self.transform = self.transform.rotated(by: gesture.rotation)
-            currentRotationDifference = -diff
-        }
-        
-        if gesture.state == UIGestureRecognizerState.ended{
-            print("Rotation von Ursprung aus \(currentRotationDifference)")
-            self.rotationDegree = Float(currentRotationDifference!)
-        }
-    
-        gesture.rotation = 0
-    }
- */
+     func rotateCamera(gesture: UIRotationGestureRecognizer){
+     return
+     
+     let  oldRotationRadians = atan2f(Float(self.originalTransformation!.b), Float(self.originalTransformation!.a))
+     let  currentRotationRad = atan2f(Float(self.transform.b), Float(self.transform.a))
+     let oldRotationDeg = oldRotationRadians * Float(90 / M_PI_2)
+     let currentRotationDeg = currentRotationRad * Float(90 / M_PI_2)
+     let diff = CGFloat(oldRotationDeg - currentRotationDeg)
+     
+     if (0<=abs(diff) && abs(diff)<=90){ // allow only rotation between -90 and 90 degree
+     self.transform = self.transform.rotated(by: gesture.rotation)
+     currentRotationDifference = -diff
+     }
+     
+     if gesture.state == UIGestureRecognizerState.ended{
+     print("Rotation von Ursprung aus \(currentRotationDifference)")
+     self.rotationDegree = Float(currentRotationDifference!)
+     }
+     
+     gesture.rotation = 0
+     }
+     */
     
     /*
-    public override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        transformation = self.transform
-        return true
-    }*/
+     public override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+     transformation = self.transform
+     return true
+     }*/
 }

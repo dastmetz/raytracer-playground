@@ -40,7 +40,7 @@ public class Camera {
         return Ray(start: self.position, direction: direction)
     }
     
-
+    
     public func setFieldOfView(_ fov: Float){
         if  (50 <= fov) && (fov <= 100) {
             fieldOfView = fov
@@ -49,3 +49,4 @@ public class Camera {
         }
     }
 }
+

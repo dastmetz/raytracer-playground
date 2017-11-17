@@ -12,7 +12,7 @@ public struct Ray {
     var start: Vec3
     var direction: Vec3
     
-   public func positionAt(_ scalar: Float) -> Vec3{
+    public func positionAt(_ scalar: Float) -> Vec3{
         return start + ( scalar * direction )
     }
     
@@ -49,6 +49,6 @@ public struct Ray {
         
         return tmpPoint
     }
-
+    
     
 }

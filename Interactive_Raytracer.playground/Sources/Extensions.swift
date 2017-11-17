@@ -7,7 +7,7 @@ public extension UIColor{
         let red     = Float(tmpColor.red)
         let green   = Float(tmpColor.green)
         let blue    = Float(tmpColor.blue)
-
+        
         return Vec3(x: red, y: green, z: blue)
     }
 }

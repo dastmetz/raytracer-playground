@@ -33,7 +33,7 @@ public class RayTracer: RenderModelDelegate {
         createInitialScene()
         PlaygroundPage.current.liveView = vc
     }
-
+    
     public func start(){
         setupScene()
         self.vc.startProgressIndicator()
@@ -59,7 +59,7 @@ public class RayTracer: RenderModelDelegate {
     public func setShapeReflection(newReflection: ReflectionDescriptor){
         updateShapes(newReflection)
     }
-   
+    
     
     private func setupScene(){
         RenderController.sharedInstance.scene.reset()
@@ -93,14 +93,14 @@ public class RayTracer: RenderModelDelegate {
         let ratio = size!/maxSizeRenderShape
         return Float(ratio) * RenderController.maxRenderObjectSize
     }
-
+    
     public func createInitialScene(){
         let centerPoint = CGPoint(x: vc.gridContainer.gridView.frame.width/2,
                                   y: vc.gridContainer.gridView.frame.height/2)
         addShapeToGrid(point: centerPoint)   // add a sphere in center
     }
     
-  
+    
     
     private func updateShapes(newColor: UIColor){
         for (shape, descriptor) in renderShapes {
@@ -155,7 +155,7 @@ public class RayTracer: RenderModelDelegate {
         renderShapes[selectedShape!] = newDescriptor
         start()
     }
-
+    
     
     // RenderModelDelegate
     
@@ -171,15 +171,15 @@ public class RayTracer: RenderModelDelegate {
             }
         }
         print("Removed Element from Scene - Starting RayTracing")
-
+        
     }
     
     public func addShapeToRenderList(renderShape: RenderShape) {
         renderShapes[renderShape] = ShapeDescriptor()
         print("Added Element to Scene - Starting RayTracing")
-//        if let _ = selectedShape{
-//            updateSelectionHighlightning(old: selectedShape!, new: renderShape)
-//        }
+        //        if let _ = selectedShape{
+        //            updateSelectionHighlightning(old: selectedShape!, new: renderShape)
+        //        }
         selectedShape = renderShape
         vc.colorSelection.backgroundColor = selectedShape?.shapeColor
         if renderable {
@@ -193,9 +193,9 @@ public class RayTracer: RenderModelDelegate {
     
     func updateRenderShapeSize(shape: RenderShape){
         guard let curr = renderShapes[shape] else { return }
-//        if let _ = selectedShape{
-//            updateSelectionHighlightning(old: selectedShape!, new: shape)
-//        }
+        //        if let _ = selectedShape{
+        //            updateSelectionHighlightning(old: selectedShape!, new: shape)
+        //        }
         selectedShape = shape
         var scale: CGFloat?
         var newSize: SizeDescriptor?
@@ -218,7 +218,7 @@ public class RayTracer: RenderModelDelegate {
                                               col: curr.color,
                                               size: newSize!)
         start()
-
+        
     }
     
     
@@ -258,6 +258,6 @@ public class RayTracer: RenderModelDelegate {
             }
         }
     }
-
+    
     
 }

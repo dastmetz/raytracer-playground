@@ -76,12 +76,13 @@ public class RenderShape: ShapeView{
         self.addSubview(discardButton)
     }
     
+    @objc
     public func discardShape(){
         print("Discard Button Pressed")
         delegate?.discardShape(renderShape: self)
     }
     
-    
+    @objc
     public func detectTap(_ tap: UITapGestureRecognizer){
         if isSeleted{
             delegate?.growShape(renderShape: self)

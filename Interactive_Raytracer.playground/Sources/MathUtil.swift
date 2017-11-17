@@ -17,7 +17,7 @@ public struct Vec3 {
     var z: Float = 0.0
     
     public init(){
-    
+        
     }
     
     public init(x: Float, y: Float, z: Float){

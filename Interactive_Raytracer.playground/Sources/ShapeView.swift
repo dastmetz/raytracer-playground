@@ -34,7 +34,7 @@ public class ShapeView: UIView {
     }
     
     // Gestures
-    
+    @objc
     public func detectPan(_ recognizer:UIPanGestureRecognizer) {
         if recognizer.state == UIGestureRecognizerState.began{
             dragStartPosition = self.center
@@ -85,7 +85,7 @@ public class ShapeView: UIView {
         return newCenter
     }
     
-    
+    @objc
     public func detectLongTap(_ recognizer: UILongPressGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizerState.began){
             startShaking()

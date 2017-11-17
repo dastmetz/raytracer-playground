@@ -69,6 +69,7 @@ class GridView: UIView, RenderShapeViewDelegate{
         context?.scaleBy(x: 1.5, y: 1.5)
     }
     
+    @objc
     public func didTap( _ tapGR: UILongPressGestureRecognizer){
         print("Tap recognized")
         if (tapGR.state == UIGestureRecognizerState.began){
